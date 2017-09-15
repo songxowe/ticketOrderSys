@@ -1,0 +1,11 @@
+package com.ticketOrderSys.test;
+
+import com.opensymphony.xwork2.interceptor.annotations.Before;
+
+public class Test {
+
+	@Before
+	public void init() {
+
+	}
+}

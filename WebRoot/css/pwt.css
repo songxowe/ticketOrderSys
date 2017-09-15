@@ -1,0 +1,117 @@
+#main{
+    		width:960px;
+    		margin:0 auto;
+    		border: none;
+    		height: 700px;
+    	}
+    	#head{
+    		width: 80%;
+    		height: 150px;
+    	}
+    	.titleleft{
+    		text-align:center;
+    		background-color: #ddd;
+    		height: 35px;
+    		float: right;
+    		width: 317px;
+    	}
+    	.titleright{
+    		text-align:left;
+    		background-color: #ddd;
+    		height: 34px;
+    		/* float: right; */
+    		width: 629px;
+    		float: left;
+    	}
+    	#userInfo{
+    		float: left;
+    		margin-bottom: 5px;
+    		margin-right: 5px;
+    		width: 317px;
+    		border: 1px solid #ddd ;
+    		height: 170px;
+    	}
+    	#domesticFlight{
+    		float: right;
+    		margin-bottom: 0px;
+    		margin-left: 5px;
+    		width: 629px;
+    		border: 1px solid #ddd ;
+    		height: 216px;
+    		border-left: none;
+    	}
+    	#search{
+    		float: left;
+    		margin-top: 5px;
+    		margin-right: 5px;
+    		width: 317px;
+    		height: 180px;
+    		border: 1px solid #ddd ;
+    	}
+    	#internationalFlight{
+    		float: right;
+    		margin-top: 10px;
+    		margin-left: 5px;
+    		width: 629px;
+    		border: 1px solid #ddd ;
+    		height: 216px;
+    		border-left: none;
+    	}
+    	/*  ***********************************************/
+    	 body {
+            height: 100%;
+            overflow: auto;
+            margin: 0;
+            font-family: 微软雅黑;
+        }
+        #register {
+            position: fixed;
+            _position: absolute;
+            top: 40%;
+            left: 50%;
+            border: 1px solid #ddd;/*弹出框边框样式*/
+            background-color: #FFFFFF;/*弹出框背景色*/
+            display:none;
+            width: 400px;
+            height: 420px;
+            z-index: 8;
+            border-radius: 3px;
+            box-shadow: #666 0px 0px 10px;
+        }
+        * html {
+            overflow: hidden;
+            position: absolute;
+        }	
+        .warning{
+        	display: none;
+        	color: red;
+        	font-size: x-small;
+        }
+        hr{
+        	border: 1px solid #ddd;
+        }
+        input{
+        	border-radius:0.2em;
+       	    border:1px inset #ddd;
+        }
+        .sqeDiv,.sqeSpan{
+        width:110px;
+        text-align:right;
+        float: left;
+        margin-left: 8px;
+        margin-right:8px;
+        }
+        .btn{
+        	border-radius: 3px;
+            box-shadow: #666 0px 0px 2px;
+        	height: 28px;
+        }
+        a{
+        	text-decoration: underline;
+        	color: black;
+        }
+        div{
+        	 border-top-left-radius: 2px;
+        	 border-top-right-radius: 2px;
+        }
+    	

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<include file="struts-pwt.xml"></include>
+	<include file="struts-lb.xml"></include>
+	<include file="struts-lyt.xml"></include>
+	<include file="struts-fsl.xml"></include>
+	<include file="struts-zc.xml"></include> 
+</struts>    

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	
+		
+		<!-- Spring-Hibernate 事务配置 -->
+		<!-- Hibernate 事务管理器 -->
+		<bean id="transactionManager"
+			class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+			<property name="sessionFactory" ref="sessionFactory" />
+		</bean>
+		<!-- 事务通知 -->
+		<!-- <tx:annotation-driven transaction-manager="transactionManager" />  -->
+		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+			<!-- 事务的传播行为 -->
+			<tx:attributes>
+				<!-- 
+					name:凡是以add开头的方法都必须使用事务
+					propagation:传播行为-必须使用事务
+					isolation:隔离级别(Spring 默认)
+				 -->
+				<tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT"/>
+				<tx:method name="modify*" propagation="REQUIRED" isolation="DEFAULT"/>
+				<tx:method name="remove*" propagation="REQUIRED" isolation="DEFAULT"/>
+				<tx:method name="*" propagation="NOT_SUPPORTED" read-only="true"/>
+			</tx:attributes>
+		</tx:advice>
+		
+		<!-- 事务管理的切面 -->
+		<aop:config>
+			<aop:pointcut expression="execution(* com.ticketOrderSys.service.*.*(..))" id="allMetionds"/>
+			<!-- advisor 把通知和 切入点关联形成一个切面 -->
+			<aop:advisor advice-ref="txAdvice" pointcut-ref="allMetionds"/>
+		</aop:config>
+	</beans>

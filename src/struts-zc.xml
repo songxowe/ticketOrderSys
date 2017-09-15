@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="personalCenter" extends="struts-default" namespace="/">
+	
+		<!-- class中的personalCenterAction 来自spring 配置文件 bean id -->
+		<action name="personalCenterAction_*" method="{1}" class="com.ticketOrderSys.zc.action.PersonalCenterAction">
+			 <result name="initSession">/personalCenter/personCenterIndex_1.jsp</result>
+			 <result name="findById">/personalCenter/edit.jsp </result>
+			 <result name="showOrder">/personalCenter/personCenterIndex_2.jsp </result>
+		</action>
+		
+		<!-- class中的userAction 来自spring 配置文件 bean id -->
+		<action name="adminAction_*" method="{1}" class="com.ticketOrderSys.zc.action.AdminAction">
+			 <result name="exit" type="redirect">/backgroundManager/login.jsp</result>
+		</action>
+	</package>
+</struts>    

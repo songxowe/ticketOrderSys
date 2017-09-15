@@ -1,0 +1,32 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My JSP 'index.jsp' starting page</title>
+  </head>
+  
+  <body>
+    <table width="960px" align="center" cellspacing="20px;" cellpadding="20px;">
+		<tr>
+			<td colspan="2">
+			<jsp:include page="common/head.jsp"></jsp:include>
+	<div align="center" style="padding-bottom: 10px;">
+		<table width="100%">
+			<tr>
+				<td width="10%"><a
+					href="${pageContext.request.contextPath}/flight_indexList.action"><img alt="logo"
+					src="${pageContext.request.contextPath}/image/logo.png" ></a></td>
+				<td width="90%"><iframe width="420" scrolling="no" height="60"
+					frameborder="0" allowtransparency="true"
+					src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=5" style="float:
+					right;"></iframe></td>
+			</tr>
+		</table>
+	</div>
+	</td>
+</tr>
+</table>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="indexPage" extends="struts-default" namespace="/">
+		<action name="flightAction_*" method="{1}" class="com.ticketOrderSys.pwt.action.FlightAction">
+		</action>
+		<action name="orderTicketAction_*" method="{1}" class="com.ticketOrderSys.pwt.action.OrderTicketAction">
+			<result name="order">/edit.jsp</result>
+		</action>
+		<action name="userPwtAction_*" method="{1}" class="com.ticketOrderSys.pwt.action.UserPwtAction">
+		</action>
+		<action name="valSessionAction_*" method="{1}" class="com.ticketOrderSys.pwt.action.ValSessionAction">
+		</action>
+	</package>
+</struts>    

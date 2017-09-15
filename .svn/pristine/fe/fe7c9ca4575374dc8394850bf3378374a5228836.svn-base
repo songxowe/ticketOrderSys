@@ -1,0 +1,48 @@
+package com.ticketOrderSys.dao;
+
+import java.util.List;
+
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+
+import com.ticketOrderSys.pojo.FlightOrder;
+import com.ticketOrderSys.utils.Pager;
+
+public class FlightOrderDaoImpl extends HibernateDaoSupport implements FlightOrderDao {
+
+	@Override
+	public void add(FlightOrder flightOrder) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void modify(FlightOrder flightOrder) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void remove(FlightOrder flightOrder) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public FlightOrder find(Integer oid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FlightOrder> find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Pager<FlightOrder> find(Integer page, Integer rows, String sort, String order, String oid, String userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

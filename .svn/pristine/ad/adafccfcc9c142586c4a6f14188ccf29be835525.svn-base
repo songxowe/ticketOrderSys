@@ -1,0 +1,9 @@
+package com.ticketOrderSys.utils;
+
+public class UUID {
+
+	public static void main(String[] args) {
+		java.util.UUID uuid = java.util.UUID.randomUUID();
+		System.out.println(uuid.toString().substring(0, 8).toUpperCase());
+	}
+}

@@ -1,0 +1,21 @@
+package com.ticketOrderSys.service;
+
+import java.util.List;
+
+import com.ticketOrderSys.pojo.FlightOrder;
+import com.ticketOrderSys.utils.Pager;
+
+public interface FlightOrderService {
+
+	void add(FlightOrder flightOrder);
+
+	void modify(FlightOrder flightOrder);
+
+	void remove(FlightOrder flightOrder);
+
+	FlightOrder find(Integer oid);
+
+	List<FlightOrder> find();
+
+	Pager<FlightOrder> find(Integer page, Integer rows, String sort, String order, String orderNo, Integer userid);
+}

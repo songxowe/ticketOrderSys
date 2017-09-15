@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url"
+			value="jdbc:oracle:thin:@127.0.0.1:1521:pwt">
+		</property>
+		<property name="username" value="scott"></property>
+		<property name="password" value="1111122222"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/ticketOrderSys/pojo/Admin.hbm.xml</value>
+				<value>com/ticketOrderSys/pojo/User.hbm.xml</value>
+				<value>com/ticketOrderSys/pojo/Flight.hbm.xml</value>
+				<value>
+					com/ticketOrderSys/pojo/FlightOrder.hbm.xml
+				</value></list>
+		</property>
+	</bean>
+	<!-- 注入Dao -->
+	<bean id="userDao" class="com.ticketOrderSys.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="flightDao" class="com.ticketOrderSys.dao.FlightDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="flightOrderDao" class="com.ticketOrderSys.dao.FlightOrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 注入service -->
+	<bean id="userService" class="com.ticketOrderSys.service.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="flightService" class="com.ticketOrderSys.service.FlightServiceImpl">
+		<property name="flightDao" ref="flightDao"></property>
+	</bean>
+	<bean id="flightOrderService" class="com.ticketOrderSys.service.FlightOrderServiceImpl">
+		<property name="flightOrderDao" ref="flightOrderDao"></property>
+	</bean>
+	
+	<!-- 导入事务配置文件 -->
+		<import resource="applicationContext-tx.xml"/>
+</beans>

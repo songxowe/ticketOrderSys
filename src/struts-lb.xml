@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="ticketOrderSyslb" extends="struts-default"
+		namespace="/">
+		<action name="flightOrderAction_*" method="{1}"
+			class="com.ticketOrderSys.lb.action.FlightOrderAction">
+			<result name="list">/backgroundManager/ticketManager.jsp</result>
+			<result name="remove" type="redirectAction">flightOrderAction_list</result>
+		</action>
+	</package>
+</struts>
+
